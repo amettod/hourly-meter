@@ -1,0 +1,28 @@
+{{define "head"}}<?xml version="1.0" encoding="windows-1251" standalone="yes"?>
+<message class="80020" version="2" number="2">
+  <datetime>
+    <timestamp>{{.Year}}{{.Month}}{{.Day}}235555</timestamp>
+    <daylightsavingtime>1</daylightsavingtime>
+    <day>{{.Year}}{{.Month}}{{.Day}}</day>
+  </datetime>
+  <sender>
+    <inn></inn>
+    <name>{{.CompanyName}}</name>
+  </sender>
+  <area timezone="1">
+    <inn>0000000000</inn>
+    <name>0</name>
+    <accountpoint code="{{.Contract}}{{.Meter}}" name="">
+      <measuringchannel code="01" desc="ïîêàçàíèå àêòèâíîãî ïðèåìà">
+{{end}}
+
+{{define "body"}}{{range .}}        <period start="{{.StartPeriod}}00" end="{{.EndPeriod}}00">
+          <value status="0">{{.Value}}</value>
+        </period>
+{{end}}{{end}}
+
+{{define "tail"}}      </measuringchannel>
+    </accountpoint>
+  </area>
+</message>
+{{end}}

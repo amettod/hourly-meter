@@ -1,0 +1,54 @@
+{{template "base" .}}
+
+{{define "title"}}Form{{end}}
+
+{{define "style"}}
+    input {
+        padding: 0.75em 18px;
+        width: 100%;
+        color: #6A6C6F;
+        background: #FFFFFF;
+        border: 1px solid #E4E5E7;
+        border-radius: 3px; 
+        transition: 1s;
+    }
+    input[type=file]::file-selector-button {
+        display: none;
+    }
+    input[type="submit"]:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    form label {
+        display: inline-block;
+        margin-bottom: 9px;
+    }
+{{end}}
+
+{{define "main"}}
+    <form action="/run" method="POST" enctype="multipart/form-data">
+    <div>
+        <label>Choose file (HTML)</label>
+        <input type="file" name="filename" accept=".html" required>
+    </div>
+    <div>
+        <label>Contract number</label>
+        <input type="text" name="contract" required>
+    </div>
+    <div>
+        <label>Company name</label>
+        <input type="text" name="name" required>
+    </div>
+    <div>
+        <label>Meter serial number</label>
+        <input type="text" name="meter">
+    </div>
+    <div>
+        <label>Power factory</label>
+        <input type="number" name="coefficient" min="1" value="1">
+    </div>
+    <div>
+        <label>Run</label>
+        <input type="submit" value="···">
+    </div>
+    </form>
+{{end}}

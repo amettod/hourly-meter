@@ -1,0 +1,14 @@
+{{template "base" .}}
+
+{{define "title"}}Total{{end}}
+
+{{define "style"}}{{end}}
+
+{{define "main"}}
+    <div>
+        <p>Total: {{.Total}} kWh</p>
+    </div>
+    <div>
+        <p>Values: {{.Values}}</p>
+    </div>
+{{end}}

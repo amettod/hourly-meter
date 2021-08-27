@@ -13,3 +13,15 @@ The application performs syntax analysis of *.html file received by "Universal c
         -name="company name" \
         -coefficient="power factory"
     ```
+* **Web interface**
+    ```shellscript
+    $ go build ./cmd/web
+    ```
+    ```shellscript
+    $ ./web 
+    ```
+
+* **Use Makefile**
+    ```shellscript
+    $ make
+    ```
